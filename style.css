@@ -1,0 +1,321 @@
+body {
+  font-family: 'FFMarkWebPro', sans-serif;
+  background-color: #f9f9f9;
+  color: #004153; /* Petrol */
+}
+
+.demo-banner {
+  position: fixed;
+  top: 40px;
+  right: -80px;
+  background-color: #ff9c66; /* Apricot */
+  color: #004153; /* Petrol */
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-weight: bold;
+  font-size: 0.9em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+  transform: rotate(30deg);
+  width: 320px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #004153; /* Petrol */
+}
+
+.subheading {
+  font-family: 'FreightTextPro', serif;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #ff9c66; /* Apricot */
+}
+
+.rating-legend {
+  background-color: #f2f2f2;
+  border-left: 4px solid #004153; /* Petrol */
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.legend-title {
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-size: 1.1em;
+  font-weight: 800;
+  color: #004153; /* Petrol */
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.legend-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.legend-badge {
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 8px 8px;
+  border-radius: 5px;
+  color: #004153;
+  text-align: center;
+  min-width: 8;
+}
+
+.legend-content {
+  flex: 1;
+}
+
+.legend-content strong {
+  display: block;
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-weight: bold;
+  color: #004153; /* Petrol */
+  margin-bottom: 3px;
+}
+
+.legend-content p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #666;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 1.2em;
+}
+
+th em {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+.description {
+  font-size: 0.8em;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-family: 'FFMarkWebPro', sans-serif;
+  font-weight: 800;
+}
+
+.phase-container {
+  position: relative;
+}
+
+.phase-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  height: 40px; /* Adjust as needed */
+}
+
+.circle-container {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #004153; /* Petrol */
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.triangle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #004153; /* Petrol */
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: auto;
+}
+
+.triangle.rating-red {
+  background-color: #F44336;
+}
+
+.triangle.rating-yellow {
+  background-color: #FFC107;
+}
+
+.triangle.rating-green {
+  background-color: #4CAF50;
+}
+
+.square {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #004153; /* Petrol */
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.circle-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #004153;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.triangle .circle-tooltip {
+  transform: rotate(-45deg) translateY(-20px);
+  z-index: 1000;
+}
+
+.circle:hover .circle-tooltip,
+.triangle:hover .circle-tooltip,
+.square:hover .circle-tooltip {
+  visibility: visible;
+}
+
+.triangle-symbol,
+.square-symbol,
+.circle-symbol {
+  font-size: 1.2em;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.Green {
+  background-color: #D4EDDA;
+}
+
+.Yellow {
+  background-color: #FFF3CD;
+}
+
+.Red {
+  background-color: #F8D7DA;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.example-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.rating-bar {
+  width: 10px;
+  margin-right: 15px;
+}
+
+.rating-red {
+  background-color: #F44336;
+}
+
+.rating-yellow {
+  background-color: #FFC107;
+}
+
+.rating-green {
+  background-color: #4CAF50;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tool-link {
+  color: #004153; /* Petrol */
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.tool-link:hover {
+  color: #ff9c66; /* Apricot */
+  text-decoration: underline;
+}
+
+.tool-name {
+  color: #004153; /* Petrol */
+  font-weight: 500;
+}
